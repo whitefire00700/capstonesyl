@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">sylvesterfrancis</string>
+    <string name="app_name">sylvester francis</string>
     <string name="header_text">Sylvester Ranjith Francis</string>
-    <string name="title_activity_about_me">AboutMe</string>
+    <string name="title_activity_about_me">About Me</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_about__me">About_Me</string>
     <string name="title_activity_projects">Projects</string>
