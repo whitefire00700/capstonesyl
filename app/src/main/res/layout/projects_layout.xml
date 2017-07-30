@@ -30,7 +30,34 @@
             android:background="@android:color/white"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
 
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:textStyle="bold"
+                    android:text="Project Name"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:padding="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView"
+                    android:layout_marginTop="10dp"
+                    android:text="Project Description"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:padding="5dp"
+                    />
+            </RelativeLayout>
         </ScrollView>
 
 

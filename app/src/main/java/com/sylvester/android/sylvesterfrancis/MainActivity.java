@@ -11,7 +11,9 @@ import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
 import com.sylvester.android.sylvesterfrancis.activities.DrawerActivity;
 import com.sylvester.android.sylvesterfrancis.fragment.AboutMeFragment;
+import com.sylvester.android.sylvesterfrancis.fragment.CertificatesFragment;
 import com.sylvester.android.sylvesterfrancis.fragment.ContactMeFragment;
+import com.sylvester.android.sylvesterfrancis.fragment.ProjectsFragment;
 import com.sylvester.android.sylvesterfrancis.fragment.RecyclerViewFragment;
 
 import butterknife.BindView;
@@ -46,10 +48,12 @@ public class MainActivity extends DrawerActivity {
                     case 0:
                         AboutMeFragment about = new AboutMeFragment();
                         return about;
-                    //case 1:
-                    //    return RecyclerViewFragment.newInstance();
-                    //case 2:
-                    //    return WebViewFragment.newInstance();
+                    case 1:
+                        CertificatesFragment certificate = new CertificatesFragment();
+                        return certificate;
+                    case 2:
+                        ProjectsFragment project = new ProjectsFragment();
+                        return project;
                     case 3:
                         ContactMeFragment contact = new ContactMeFragment();
                         return contact;

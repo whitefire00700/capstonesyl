@@ -16,7 +16,7 @@
         app:cardCornerRadius="2dp"
         app:cardElevation="2dp"
         app:cardPreventCornerOverlap="false"
-        app:contentPadding="0dp">
+        app:contentPadding="15dp">
 
 
         <ScrollView
@@ -43,6 +43,7 @@
                    android:textAlignment="center"
                    android:textSize="24sp"
                    android:fontFamily="sans-serif-smallcaps"
+                   android:padding="5dp"
                    />
 
 

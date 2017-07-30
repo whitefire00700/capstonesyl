@@ -18,8 +18,6 @@ public class AboutViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     List<Object> contents;
 
     static final int TYPE_HEADER = 0;
-    static final int TYPE_CELL = 1;
-
     public AboutViewAdapter(List<Object> contents) {
         this.contents = contents;
     }
@@ -30,7 +28,7 @@ public class AboutViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             case 0:
                 return TYPE_HEADER;
             default:
-                return TYPE_CELL;
+                return TYPE_HEADER;
         }
     }
 
@@ -46,12 +44,6 @@ public class AboutViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         switch (viewType) {
             case TYPE_HEADER: {
                 view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.list_item_card_big, parent, false);
-                return new RecyclerView.ViewHolder(view) {
-                };
-            }
-            case TYPE_CELL: {
-                view = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.list_item_card_large, parent, false);
                 return new RecyclerView.ViewHolder(view) {
                 };
@@ -65,8 +57,6 @@ public class AboutViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         switch (getItemViewType(position)) {
             case TYPE_HEADER:
-                break;
-            case TYPE_CELL:
                 break;
         }
     }

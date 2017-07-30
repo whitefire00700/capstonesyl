@@ -28,7 +28,7 @@ public class AboutMeFragment extends Fragment {
 
 
     private static final boolean GRID_LAYOUT = false;
-    private static final int ITEM_COUNT = 2;
+    private static final int ITEM_COUNT = 1;
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
@@ -39,7 +39,7 @@ public class AboutMeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_aboutme, container, false);
+        return inflater.inflate(R.layout.fragment_recyclerview, container, false);
     }
 
     @Override
