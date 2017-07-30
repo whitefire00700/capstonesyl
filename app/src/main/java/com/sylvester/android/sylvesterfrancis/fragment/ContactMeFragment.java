@@ -28,7 +28,7 @@ public class ContactMeFragment extends Fragment {
 
 
     private static final boolean GRID_LAYOUT = false;
-    private static final int ITEM_COUNT = 2;
+    private static final int ITEM_COUNT = 1;
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
