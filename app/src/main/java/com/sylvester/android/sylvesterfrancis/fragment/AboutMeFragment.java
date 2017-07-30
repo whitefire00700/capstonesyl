@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.florent37.materialviewpager.header.MaterialViewPagerHeaderDecorator;
+import com.sylvester.android.sylvesterfrancis.AboutViewAdapter;
 import com.sylvester.android.sylvesterfrancis.R;
-import com.sylvester.android.sylvesterfrancis.TestRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +65,7 @@ public class AboutMeFragment extends Fragment {
 
         //Use this now
         mRecyclerView.addItemDecoration(new MaterialViewPagerHeaderDecorator());
-        mRecyclerView.setAdapter(new TestRecyclerViewAdapter(items));
+        mRecyclerView.setAdapter(new AboutViewAdapter(items));
     }
 
 
