@@ -1,16 +1,17 @@
 package com.sylvester.android.sylvesterfrancis;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
 import com.sylvester.android.sylvesterfrancis.activities.DrawerActivity;
 import com.sylvester.android.sylvesterfrancis.fragment.AboutMeFragment;
+import com.sylvester.android.sylvesterfrancis.fragment.ContactMeFragment;
 import com.sylvester.android.sylvesterfrancis.fragment.RecyclerViewFragment;
 
 import butterknife.BindView;
@@ -49,8 +50,9 @@ public class MainActivity extends DrawerActivity {
                     //    return RecyclerViewFragment.newInstance();
                     //case 2:
                     //    return WebViewFragment.newInstance();
-                    //case 3:
-                    //    return WebViewFragment.newInstance();
+                    case 3:
+                        ContactMeFragment contact = new ContactMeFragment();
+                        return contact;
 
                     default:
                         return RecyclerViewFragment.newInstance();
