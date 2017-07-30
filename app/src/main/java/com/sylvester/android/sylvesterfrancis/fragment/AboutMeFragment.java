@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.florent37.materialviewpager.header.MaterialViewPagerHeaderDecorator;
-import com.sylvester.android.sylvesterfrancis.AboutViewAdapter;
+import com.sylvester.android.sylvesterfrancis.adapters.AboutViewAdapter;
 import com.sylvester.android.sylvesterfrancis.R;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.sylvester.android.sylvesterfrancis;
+package com.sylvester.android.sylvesterfrancis.activities;
 
 /**
  * Created by sylvester on 27/07/17.
@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.crashlytics.android.Crashlytics;
+import com.sylvester.android.sylvesterfrancis.BuildConfig;
+import com.sylvester.android.sylvesterfrancis.R;
 
 import io.fabric.sdk.android.Fabric;
 

@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
+import com.sylvester.android.sylvesterfrancis.activities.DrawerActivity;
 import com.sylvester.android.sylvesterfrancis.fragment.AboutMeFragment;
 import com.sylvester.android.sylvesterfrancis.fragment.RecyclerViewFragment;
 
@@ -47,6 +48,8 @@ public class MainActivity extends DrawerActivity {
                     //case 1:
                     //    return RecyclerViewFragment.newInstance();
                     //case 2:
+                    //    return WebViewFragment.newInstance();
+                    //case 3:
                     //    return WebViewFragment.newInstance();
 
                     default:

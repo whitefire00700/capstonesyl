@@ -1,24 +1,26 @@
-package com.sylvester.android.sylvesterfrancis;
+package com.sylvester.android.sylvesterfrancis.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sylvester.android.sylvesterfrancis.R;
+
 import java.util.List;
 
 /**
- * Created by sylvester on 30/07/17.
+ * Created by sylvester on 28/07/17.
  */
 
-public class AboutViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class TestRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     List<Object> contents;
 
     static final int TYPE_HEADER = 0;
     static final int TYPE_CELL = 1;
 
-    public AboutViewAdapter(List<Object> contents) {
+    public TestRecyclerViewAdapter(List<Object> contents) {
         this.contents = contents;
     }
 
@@ -50,7 +52,7 @@ public class AboutViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             }
             case TYPE_CELL: {
                 view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.list_item_card_large, parent, false);
+                        .inflate(R.layout.list_item_card_big, parent, false);
                 return new RecyclerView.ViewHolder(view) {
                 };
             }

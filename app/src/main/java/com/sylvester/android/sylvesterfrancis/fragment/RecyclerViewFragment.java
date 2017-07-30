@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.github.florent37.materialviewpager.header.MaterialViewPagerHeaderDecorator;
 import com.sylvester.android.sylvesterfrancis.R;
-import com.sylvester.android.sylvesterfrancis.TestRecyclerViewAdapter;
+import com.sylvester.android.sylvesterfrancis.adapters.TestRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
