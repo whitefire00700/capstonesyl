@@ -44,7 +44,7 @@ public class AboutViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         switch (viewType) {
             case TYPE_HEADER: {
                 view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.list_item_card_large, parent, false);
+                        .inflate(R.layout.activity_aboutme, parent, false);
                 return new RecyclerView.ViewHolder(view) {
                 };
             }
