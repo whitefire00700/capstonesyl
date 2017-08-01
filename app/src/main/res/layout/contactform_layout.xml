@@ -226,6 +226,7 @@
                 android:text="@string/google_plus"
                 android:fontFamily="sans-serif-small"
                 android:textSize="18sp"
+                android:padding="5dp"
                 />
 
              </RelativeLayout>
@@ -246,6 +247,7 @@
                     android:text="@string/twitter"
                     android:fontFamily="sans-serif-small"
                     android:textSize="18sp"
+                    android:padding="5dp"
                     />
 
                 </RelativeLayout>
@@ -266,6 +268,7 @@
                     android:text="@string/linkedin"
                     android:fontFamily="sans-serif-small"
                     android:textSize="18sp"
+                    android:padding="5dp"
                     />
 
                 </RelativeLayout>
@@ -287,6 +290,7 @@
                         android:text="@string/skype"
                         android:fontFamily="sans-serif-small"
                         android:textSize="18sp"
+                        android:padding="5dp"
                         />
                 </RelativeLayout>
                 <RelativeLayout
@@ -306,6 +310,7 @@
                         android:text="@string/whatsapp"
                         android:fontFamily="sans-serif-small"
                         android:textSize="18sp"
+                        android:padding="5dp"
                         />
                 </RelativeLayout>
                 <RelativeLayout
@@ -325,8 +330,9 @@
                         android:text="@string/gmail"
                         android:fontFamily="sans-serif-small"
                         android:textSize="18sp"
+                        android:padding="5dp"
                         />
-                </RelativeLayout>
+                    </RelativeLayout>
             </LinearLayout>
             </RelativeLayout>
         </ScrollView>
