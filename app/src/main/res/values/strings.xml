@@ -17,16 +17,22 @@
     <string name="contact_form_button">Send Message</string>
     <string name="contact_form_post_message">Please wait! We\'re sending your message to the support department...</string>
     <string name="contact_posted">Your message has been successfully delivered.</string>
-    <string name="about_para1">The process of automating everyday tasks and making them more efficient by utilizing the computing power of a machine greatly fascinates me. Features such as recommendations of search phrases and the display of relevant product promotions based on one’s search history made me curious. The prospect of a computer actually knowing the user and responding accordingly inspired me to learn in detail about such technologies. This drove me to choose Computer Science as one of my core subjects in high school. I followed this up with an undergraduate degree in Computer Science and Engineering at Panimalar Engineering College affiliated to Anna University Chennai.</string>
-    <string name="about_para2">Ever since a tender age, I have always been fascinated by the prospect of using a computer. I was introduced to computer programming at a tender age when I used BASIC to create rudimentary programs. After working on some easier computational puzzles, I wanted to delve deeper into the world of Web Dev as it afforded an opportunity for me to also fine tune my creative skills. I was inclined towards computer science engineering as the subject of study in my undergraduate as the curriculum of this course necessitated a reflection of my competencies in Programming, Analysis and Problem Solving.Having an urge to learn something new I expanded on the concepts taught in college by learning various other Programming Paradigms and Data structures. I have done a course on Python Data Structures from University of Michigan on Coursera and secured a distinction in that course.</string>
+    <string name="about_para1">Hi, I\'m Sylvester Francis, a freelance MEAN Stack and Android developer/Tech enthusiast.</string>
+    <string name="about_para2">My journey started off as a curious boy baffled by how computers could simplify our lives. Now I\'m interested in honing my skills to become a better programmer and show other people the wonders that computers are truly capable of.</string>
+    <string name="about_para3">Take a look at my skills,if you have an interesting app idea or want to meet me to discuss anything tech-related,feel free to contact me.</string>
     <string name="google_plus">+SylvesterRanjithFrancis</string>
     <string name="skype">whitefire11343</string>
     <string name="whatsapp">+(91)9789084865</string>
     <string name="linkedin">www.linkedin.com/in/sylvesterranjith</string>
     <string name="twitter">whitefire00700</string>
     <string name="gmail">sylvesterranjithfrancis@gmail.com</string>
-    <string name="project_title1">
-      SmarterPing — Android/Web application:
-   </string>
+    <string name="project_title1">SmarterPing — Android/Web application:</string>
     <string name="project_description1">\n 1.  An On-the go tracking application used to track the position of delivery trucks.\n 2.  Used by Sathya Agencies to track various parameters like current speed,\n position,idling time of their delivery trucks.\n 3.  Allows the firm to maintain good customer relations by predicting the estimated time of delivery of their goods.</string>
+    <string name="experience_title1">Sathya Technosoft,Chennai —  Android developer/Web developer</string>
+    <string name="experience_time1">\n June 2016 - Present</string>
+    <string name="jd1">\n 1.Working as an Android Developer and Web Developer at Sathya Technosoft \n 2.Responsible for development and maintenance of SmarterPing an Android Application used to track delivery trucks. \n 3.Also part of the team responsible for maintaining
+https://www.sathya.in  </string>
+    <string name="experience_title2">Digital Meridian Technology Solutions Private Limited - Freelance MEAN Stack Developer</string>
+    <string name="experience_time2">\n February 2017 - May 2017 </string>
+    <string name="jd2">\n 1.Worked as a Freelance MEAN Stack Developer \n 2.Played a pivotal role in building a MEAN Stack ERP solution for an Automobile parts manufacturing company  \n 3.Providing Tech-Support for the above mentioned solution</string>
 </resources>

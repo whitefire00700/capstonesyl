@@ -32,7 +32,11 @@
 
             <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                android:layout_height="fill_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:padding="15dp"
+                >
 
                 <TextView
                     android:id="@+id/project_title"
@@ -43,7 +47,7 @@
                     android:text="@string/project_title1"
                     android:textSize="14sp"
                     android:fontFamily="sans-serif-condensed"
-                    android:padding="5dp"
+                    android:padding="3dp"
                     />
 
                 <TextView
@@ -53,7 +57,7 @@
                     android:layout_below="@+id/project_title"
                     android:layout_marginTop="10dp"
                     android:text="@string/project_description1"
-                    android:textSize="10sp"
+                    android:textSize="12sp"
                     android:fontFamily="sans-serif-condensed"
                     android:padding="5dp"
                     />

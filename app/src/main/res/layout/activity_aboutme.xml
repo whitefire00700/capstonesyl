@@ -1,141 +1,311 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/cardMarginVertical"
-        android:layout_marginLeft="@dimen/cardMarginHorizontal"
-        android:layout_marginRight="@dimen/cardMarginHorizontal"
-        android:layout_marginTop="@dimen/cardMarginVertical"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="2dp"
-        app:cardPreventCornerOverlap="false"
-        app:contentPadding="15dp">
-
-
-        <ScrollView
+        <android.support.v7.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/card_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:background="@android:color/white"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/cardMarginVertical"
+            android:layout_marginLeft="@dimen/cardMarginHorizontal"
+            android:layout_marginRight="@dimen/cardMarginHorizontal"
+            android:layout_marginTop="@dimen/cardMarginVertical"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="15dp">
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="3dp">
-                <ImageView
-                    android:id="@+id/image_header"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@android:color/white"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/img1" />
-
-
-              <TextView
-                android:id="@+id/title_about"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Android|MeanStackDeveloper|Geek"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:fontFamily="sans-serif-smallcaps"
-                android:padding="5dp"
-                android:layout_below="@+id/image_header"
-                />
-
-                <TextView
-                    android:id="@+id/para1"
-                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/about_para1"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:padding="5dp"
-                    android:layout_below="@+id/title_about"
-                    />
-                <TextView
-                    android:id="@+id/para2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/about_para2"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:padding="5dp"
-                    android:layout_below="@+id/para1"
-                    />
-
-
-
-
-
-            </RelativeLayout>
-
-
-
+                    android:padding="5dp">
+                    <ImageView
+                        android:id="@+id/image_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img1" />
+                    <TextView
+                        android:id="@+id/title_about"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Android|MeanStackDeveloper|Geek"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:padding="5dp"
+                        android:layout_below="@+id/image_header" />
+                    <TextView
+                        android:id="@+id/para1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_para1"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:padding="5dp"
+                        android:layout_below="@+id/title_about" />
+                    <TextView
+                        android:id="@+id/para2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_para2"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:padding="5dp"
+                        android:layout_below="@+id/para1" />
+                    <TextView
+                        android:id="@+id/para3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_para3"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:padding="5dp"
+                        android:layout_below="@+id/para2" />
+                </RelativeLayout>
             </ScrollView>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_view2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/cardMarginVertical"
-        android:layout_marginLeft="@dimen/cardMarginHorizontal"
-        android:layout_marginRight="@dimen/cardMarginHorizontal"
-        android:layout_marginTop="@dimen/cardMarginVertical"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="2dp"
-        app:cardPreventCornerOverlap="false"
-        app:contentPadding="15dp"
-        android:layout_below="@+id/card_view">
-
-
-
-            <RelativeLayout
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/cardMarginVertical"
+            android:layout_marginLeft="@dimen/cardMarginHorizontal"
+            android:layout_marginRight="@dimen/cardMarginHorizontal"
+            android:layout_marginTop="@dimen/cardMarginVertical"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="15dp"
+            android:layout_below="@+id/card_view">
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="3dp">
-
-                <TextView
-                    android:id="@+id/para4"
-                    android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@android:color/white"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/about_para1"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:padding="5dp"
-                    />
-
-
-
-
-
-
-            </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
-
+                    android:padding="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
+                        android:padding="25dp">
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="My Skills:"
+                            android:textAlignment="center"
+                            android:textSize="20sp"
+                            android:fontFamily="sans-serif-smallcaps"
+                            android:paddingBottom="20dp" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/and"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/android"
+                                android:padding="5dp" />
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Android"
+                                android:textStyle="bold|italic"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:padding="5dp"
+                                android:layout_toRightOf="@+id/and" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView android:id="@+id/angular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/jsicon"
+                                android:padding="5dp" />
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="AngularJS"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:textStyle="bold|italic"
+                                android:fontFamily="sans-serif-condensed"
+                                android:padding="5dp"
+                                android:layout_toRightOf="@+id/angular" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/node"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/jsicon"
+                                android:padding="5dp" />
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="NodeJS"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:textStyle="bold|italic"
+                                android:fontFamily="sans-serif-condensed"
+                                android:padding="5dp"
+                                android:layout_toRightOf="@+id/node" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/mongo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/database"
+                                android:padding="5dp" />
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="MongoDB"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:padding="5dp"
+                                android:textStyle="bold|italic"
+                                android:layout_toRightOf="@+id/mongo" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/python"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/py"
+                                android:padding="5dp" />
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Python"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:padding="5dp"
+                                android:textStyle="bold|italic"
+                                android:layout_toRightOf="@+id/python" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/sql"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/sql"
+                                android:padding="5dp" />
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="SQL"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:padding="5dp"
+                                android:textStyle="bold|italic"
+                                android:layout_toRightOf="@+id/sql" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/PHP"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/php"
+                                android:padding="5dp" />
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="PHP"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:padding="5dp"
+                                android:textStyle="bold|italic"
+                                android:layout_toRightOf="@+id/PHP" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/html"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/html5"
+                                android:padding="5dp" />
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="HTML 5"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:padding="5dp"
+                                android:textStyle="bold|italic"
+                                android:layout_toRightOf="@+id/html" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView android:id="@+id/swift"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/swift"
+                                android:padding="5dp" />
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Swift"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:padding="5dp"
+                                android:textStyle="bold|italic"
+                                android:layout_toRightOf="@+id/swift" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </ScrollView>
+        </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:id="@+id/card_view3"
             android:layout_width="match_parent"
@@ -149,33 +319,158 @@
             app:cardPreventCornerOverlap="false"
             app:contentPadding="15dp"
             android:layout_below="@+id/card_view2">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@android:color/white"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
+                        android:padding="25dp"
+                        >
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Experience:"
+                            android:textAlignment="center"
+                            android:textSize="20sp"
+                            android:fontFamily="sans-serif-small"
+                            android:padding="15dp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/experience_title1"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-small"
+                            />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/experience_time1"
+                            android:textAlignment="center"
+                            android:textStyle="bold|italic"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-small"
+                            android:padding="5dp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/jd1"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-small"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/experience_title2"
+                            android:textAlignment="center"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif-small"
+                             />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/experience_time2"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            android:textStyle="bold|italic"
+                            android:fontFamily="sans-serif-small"
+                            android:padding="5dp" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/jd2"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            android:fontFamily="sans-serif-small"
+                            android:padding="5dp" />
 
 
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </ScrollView>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/cardMarginVertical"
+            android:layout_marginLeft="@dimen/cardMarginHorizontal"
+            android:layout_marginRight="@dimen/cardMarginHorizontal"
+            android:layout_marginTop="@dimen/cardMarginVertical"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardPreventCornerOverlap="false"
+            app:contentPadding="15dp"
+            android:layout_below="@+id/card_view3">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@android:color/white"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="3dp">
-
-                <TextView
-                    android:id="@+id/para5"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/about_para1"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:padding="5dp"
-                    />
+                    android:padding="5dp">
+                    <TextView
+                        android:id="@+id/location_title"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Location:"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:padding="5dp" />
+                    <TextView
+                        android:id="@+id/location_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="I live in Chennai,TamilNadu,India"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:padding="5dp"
+                        android:layout_below="@+id/location_title" />
 
-
-
-
-
-
-            </RelativeLayout>
+                    <ImageView android:id="@+id/map"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/staticmap"
+                        android:padding="5dp"
+                        android:layout_below="@+id/location_text"
+                        />
+                </RelativeLayout>
+            </ScrollView>
 
         </android.support.v7.widget.CardView>
-
-   </RelativeLayout>
+    </RelativeLayout>
 </FrameLayout>
