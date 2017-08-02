@@ -45,7 +45,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:scaleType="fitXY"
-                    android:src="@drawable/img" />
+                    android:src="@drawable/img1" />
 
 
               <TextView

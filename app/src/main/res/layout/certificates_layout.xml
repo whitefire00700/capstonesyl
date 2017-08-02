@@ -37,10 +37,10 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/image"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:src="@drawable/certificate"
+                    android:id="@+id/image_certificate"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/mlnanodegree"
                     />
 
                 <RelativeLayout
@@ -50,31 +50,31 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
-                    android:layout_toRightOf="@id/image"
+                    android:layout_toRightOf="@id/image_certificate"
                     android:orientation="vertical"
                     android:paddingLeft="16dp">
 
                     <TextView
-                        android:id="@+id/text_view1"
+                        android:id="@+id/certificate_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="bottom"
                         android:textSize="18sp"
-                        android:fontFamily="sans-serif-smallcaps"
+                        android:fontFamily="sans-serif-condensed"
                         android:textStyle="bold"
                         android:padding="5dp"
                         android:text="Certificate Title" />
 
                     <TextView
-                        android:id="@+id/text_view2"
+                        android:id="@+id/certificate_authority"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/text_view1"
+                        android:layout_below="@id/certificate_title"
                         android:layout_weight="1"
                         android:gravity="top"
-                        android:textSize="12sp"
-                        android:fontFamily="sans-serif-smallcaps"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-condensed"
                         android:padding="5dp"
                         android:text="Certificate Description" />
 
