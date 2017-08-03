@@ -15,9 +15,9 @@
             android:layout_marginRight="@dimen/cardMarginHorizontal"
             android:layout_marginTop="@dimen/cardMarginVertical"
             app:cardCornerRadius="2dp"
-            app:cardElevation="5dp"
+            app:cardElevation="2dp"
             app:cardPreventCornerOverlap="false"
-            app:contentPadding="0dp">
+            app:contentPadding="15dp">
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -92,9 +92,9 @@
             android:layout_marginRight="@dimen/cardMarginHorizontal"
             android:layout_marginTop="@dimen/cardMarginVertical"
             app:cardCornerRadius="2dp"
-            app:cardElevation="5dp"
+            app:cardElevation="2dp"
             app:cardPreventCornerOverlap="false"
-            app:contentPadding="0dp"
+            app:contentPadding="15dp"
             android:layout_below="@+id/card_view">
             <ScrollView
                 android:layout_width="match_parent"
@@ -315,9 +315,9 @@
             android:layout_marginRight="@dimen/cardMarginHorizontal"
             android:layout_marginTop="@dimen/cardMarginVertical"
             app:cardCornerRadius="2dp"
-            app:cardElevation="5dp"
+            app:cardElevation="2dp"
             app:cardPreventCornerOverlap="false"
-            app:contentPadding="0dp"
+            app:contentPadding="15dp"
             android:layout_below="@+id/card_view2">
             <ScrollView
                 android:layout_width="match_parent"
@@ -422,9 +422,9 @@
             android:layout_marginRight="@dimen/cardMarginHorizontal"
             android:layout_marginTop="@dimen/cardMarginVertical"
             app:cardCornerRadius="2dp"
-            app:cardElevation="5dp"
+            app:cardElevation="2dp"
             app:cardPreventCornerOverlap="false"
-            app:contentPadding="0dp"
+            app:contentPadding="15dp"
             android:layout_below="@+id/card_view3">
 
             <ScrollView
@@ -440,7 +440,9 @@
             <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true">
                     <TextView
                         android:id="@+id/location_title"
                         android:layout_width="fill_parent"

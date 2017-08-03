@@ -15,9 +15,9 @@
         android:layout_marginRight="@dimen/cardMarginHorizontal"
         android:layout_marginTop="@dimen/cardMarginVertical"
         app:cardCornerRadius="2dp"
-        app:cardElevation="5dp"
+        app:cardElevation="2dp"
         app:cardPreventCornerOverlap="false"
-        app:contentPadding="0dp">
+        app:contentPadding="15dp">
 
 
         <ScrollView
