@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1079943320874",
+    "firebase_url": "https://mycvapp-b4ae1.firebaseio.com",
+    "project_id": "mycvapp-b4ae1",
+    "storage_bucket": "mycvapp-b4ae1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079943320874:android:7e10538a33af9745",
+        "android_client_info": {
+          "package_name": "com.sylvester.android.sylvesterfrancis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079943320874-5hn6k2322799mrlo2tukn4ha9l1do2qb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYchEbL55ho6YQLLhhNRX2Lkkbic1yca8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
