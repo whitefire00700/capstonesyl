@@ -1,9 +1,5 @@
 package com.sylvester.android.sylvesterfrancis.retrofit;
 
-import com.sylvester.android.sylvesterfrancis.pojo.Certificate;
-
-import java.util.ArrayList;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
 
@@ -13,5 +9,5 @@ import retrofit2.http.GET;
 public interface ICertificate {
 
     @GET("certificate.json")
-    Call<ArrayList<Certificate>> getCertificate();
+    Call<JSONResponse> getCertificate();
 }

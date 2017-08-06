@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sylvester.android.sylvesterfrancis.R;
-import com.sylvester.android.sylvesterfrancis.data.Project;
+import com.sylvester.android.sylvesterfrancis.pojo.Project;
 
 import java.util.List;
 
@@ -18,6 +18,7 @@ import java.util.List;
 public class ProjectViewAdapter extends RecyclerView.Adapter<ProjectViewAdapter.ProjectViewHolder> {
 
     private List<Project> projectList;
+
 
     static final int TYPE_HEADER = 0;
 
@@ -36,6 +37,8 @@ public class ProjectViewAdapter extends RecyclerView.Adapter<ProjectViewAdapter.
     public ProjectViewAdapter(List<Project> projectList) {
         this.projectList = projectList;
     }
+
+
 
     @Override
     public int getItemViewType(int position) {
@@ -65,9 +68,8 @@ public class ProjectViewAdapter extends RecyclerView.Adapter<ProjectViewAdapter.
 
     @Override
     public void onBindViewHolder(ProjectViewHolder holder, int position) {
-        Project project = projectList.get(position);
-        holder.title.setText(project.gettitle());
-        holder.description.setText(project.getdescription());
+        holder.title.setText(projectList.get(position).getTitle());
+        holder.description.setText(projectList.get(position).getDescription());
         switch (getItemViewType(position)) {
             case TYPE_HEADER:
                 break;
