@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.florent37.materialviewpager.header.MaterialViewPagerHeaderDecorator;
-import com.sylvester.android.sylvesterfrancis.adapters.AboutViewAdapter;
 import com.sylvester.android.sylvesterfrancis.R;
+import com.sylvester.android.sylvesterfrancis.adapters.AboutViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +30,10 @@ public class AboutMeFragment extends Fragment {
     private static final boolean GRID_LAYOUT = false;
     private static final int ITEM_COUNT = 1;
 
+
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
+
 
     public static RecyclerViewFragment newInstance() {
         return new RecyclerViewFragment();

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sylvester.android.sylvesterfrancis.R;
-import com.sylvester.android.sylvesterfrancis.pojo.Project;
+import com.sylvester.android.sylvesterfrancis.retrofit.JSONResponse_Project;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import java.util.List;
 
 public class ProjectViewAdapter extends RecyclerView.Adapter<ProjectViewAdapter.ProjectViewHolder> {
 
-    private List<Project> projectList;
+    private List<JSONResponse_Project> projectList;
 
 
     static final int TYPE_HEADER = 0;
@@ -34,7 +34,7 @@ public class ProjectViewAdapter extends RecyclerView.Adapter<ProjectViewAdapter.
 
 
 
-    public ProjectViewAdapter(List<Project> projectList) {
+    public ProjectViewAdapter(List<JSONResponse_Project> projectList) {
         this.projectList = projectList;
     }
 

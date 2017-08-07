@@ -9,5 +9,5 @@ import retrofit2.http.GET;
 public interface ICertificate {
 
     @GET("certificate.json")
-    Call<JSONResponse> getCertificate();
+    Call<JSONResponse_Project> getCertificate();
 }

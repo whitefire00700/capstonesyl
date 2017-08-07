@@ -14,15 +14,18 @@ import android.view.ViewGroup;
 import com.github.florent37.materialviewpager.header.MaterialViewPagerHeaderDecorator;
 import com.sylvester.android.sylvesterfrancis.R;
 import com.sylvester.android.sylvesterfrancis.adapters.ProjectViewAdapter;
-import com.sylvester.android.sylvesterfrancis.pojo.Project;
 import com.sylvester.android.sylvesterfrancis.retrofit.IProject;
-import com.sylvester.android.sylvesterfrancis.retrofit.JSONResponse;
+import com.sylvester.android.sylvesterfrancis.retrofit.JSONResponse_Project;
 
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,7 +43,7 @@ public class ProjectsFragment extends Fragment {
 
     private static final boolean GRID_LAYOUT = false;
     private static final int ITEM_COUNT = 1;
-    private ArrayList<Project> projects;
+    private ArrayList<JSONResponse_Project> projects;
     private ProjectViewAdapter adapter;
 
     @BindView(recyclerView)
@@ -48,12 +51,6 @@ public class ProjectsFragment extends Fragment {
 
     public static RecyclerViewFragment newInstance() {
         return new RecyclerViewFragment();
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -69,18 +66,36 @@ public class ProjectsFragment extends Fragment {
     }
 
     private void loadJSON(){
+        Log.d("Debug","Loading the json file");
+        OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
+        httpClientBuilder.networkInterceptors().add(new Interceptor() {
+                    @Override
+                    public okhttp3.Response intercept(Chain chain) throws IOException {
+                        Request request = chain.request();
+                        Log.d("Debug"," Sending Request " + request.url().toString());
+                        okhttp3.Response response = chain.proceed(request);
+                        Log.d("Debug"," Receiving Response  " + response.code());
+                        return response;
+                    }
+                });
+
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://sylvester-whitefire00700.rhcloud.com/json/")
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(httpClientBuilder.build())
                 .build();
-        IProject request = retrofit.create(IProject.class);
-        Call<JSONResponse> call = request.getProject();
-        call.enqueue(new Callback<JSONResponse>() {
-            @Override
-            public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
 
-                JSONResponse jsonResponse = response.body();
-                projects = new ArrayList<>(Arrays.asList(jsonResponse.getProject()));
+        IProject request = retrofit.create(IProject.class);
+        Call<List<JSONResponse_Project>> call = request.getProject();
+        call.enqueue(new Callback<List<JSONResponse_Project>>() {
+            @Override
+            public void onResponse(Call<List<JSONResponse_Project>> call, Response<List<JSONResponse_Project>> response) {
+
+                List<JSONResponse_Project> responseBody = response.body();
+
+               projects = new ArrayList<>(responseBody);
                 adapter = new ProjectViewAdapter(projects);
                 if (GRID_LAYOUT) {
                     mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
@@ -95,8 +110,8 @@ public class ProjectsFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<JSONResponse> call, Throwable t) {
-                Log.d("Error",t.getMessage());
+            public void onFailure(Call<List<JSONResponse_Project>> call, Throwable t) {
+                Log.d("Debug", t.getMessage());
             }
         });
     }
