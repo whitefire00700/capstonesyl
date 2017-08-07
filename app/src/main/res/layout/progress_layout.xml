@@ -1,0 +1,15 @@
+<com.vlonjatg.progressactivity.ProgressFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:progressActivity="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/progress"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    progressActivity:emptyBackgroundColor="#FFFFFF"
+    progressActivity:emptyContentTextColor="#000000"
+    progressActivity:errorBackgroundColor="#FFFFFF"
+    progressActivity:errorContentTextColor="#000000"
+    progressActivity:errorTitleTextColor="#FFFFFF"
+    progressActivity:loadingBackgroundColor="#FFFFFF"
+    progressActivity:loadingProgressBarColor="#000000">
+
+</com.vlonjatg.progressactivity.ProgressFrameLayout>

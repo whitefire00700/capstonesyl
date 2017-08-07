@@ -1,6 +1,7 @@
 package com.sylvester.android.sylvesterfrancis;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +16,7 @@ import com.sylvester.android.sylvesterfrancis.fragment.CertificatesFragment;
 import com.sylvester.android.sylvesterfrancis.fragment.ContactMeFragment;
 import com.sylvester.android.sylvesterfrancis.fragment.ProjectsFragment;
 import com.sylvester.android.sylvesterfrancis.fragment.RecyclerViewFragment;
+import com.vlonjatg.progressactivity.ProgressFrameLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,10 +25,11 @@ import butterknife.ButterKnife;
  * Created by sylvester on 30/07/17.
  */
 
-public class MainActivity extends DrawerActivity {
+public class MainActivity extends DrawerActivity  {
 
     @BindView(R.id.materialViewPager)
     MaterialViewPager mViewPager;
+    ProgressFrameLayout progressRelativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,14 @@ public class MainActivity extends DrawerActivity {
         setContentView(R.layout.activity_main);
         setTitle("");
         ButterKnife.bind(this);
+        progressRelativeLayout = (ProgressFrameLayout) findViewById(R.id.progress);
+        progressRelativeLayout.showLoading();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressRelativeLayout.showContent();
+            }
+        }, 5000);
 
         final Toolbar toolbar = mViewPager.getToolbar();
         if (toolbar != null) {
@@ -125,5 +136,12 @@ public class MainActivity extends DrawerActivity {
                 }
             });
         }
+
+
+
     }
-}
+
+
+
+    }
+
