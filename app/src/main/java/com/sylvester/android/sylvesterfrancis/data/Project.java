@@ -1,36 +1,33 @@
 package com.sylvester.android.sylvesterfrancis.data;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
- * Created by sylvester on 01/08/17.
+ * Created by sylvester on 06/08/17.
  */
 
 public class Project {
-    private String project_title,project_description;
+    @SerializedName("title")
+    @Expose
+    private String title;
+    @SerializedName("description")
+    @Expose
+    private String description;
 
-    public Project() {}
-
-
-
-    public Project(String title, String description) {
-        this.project_title = title;
-        this.project_description = description;
+    public String getTitle() {
+        return title;
     }
 
-
-    public String gettitle() {
-        return project_title;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-
-    public void settitle(String title) {
-        this.project_title = title;
+    public String getDescription() {
+        return description;
     }
 
-    public String getdescription() {
-        return project_description;
-    }
-
-    public void setdescription(String description) {
-        this.project_description = description;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

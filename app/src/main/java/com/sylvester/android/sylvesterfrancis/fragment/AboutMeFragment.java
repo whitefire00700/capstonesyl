@@ -35,6 +35,7 @@ public class AboutMeFragment extends Fragment {
     RecyclerView mRecyclerView;
 
 
+
     public static RecyclerViewFragment newInstance() {
         return new RecyclerViewFragment();
     }

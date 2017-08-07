@@ -1,5 +1,6 @@
 package com.sylvester.android.sylvesterfrancis.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.sylvester.android.sylvesterfrancis.R;
 import com.sylvester.android.sylvesterfrancis.data.Certificate;
 
@@ -21,10 +23,12 @@ public class CertificateViewAdapter extends RecyclerView.Adapter<CertificateView
     private List<Certificate> certificateList;
 
     static final int TYPE_HEADER = 0;
+    Context context;
 
     public class CertificateViewHolder extends RecyclerView.ViewHolder {
         public TextView title, authority;
         public ImageView Image_id;
+
 
         public CertificateViewHolder(View view) {
             super(view);
@@ -68,10 +72,11 @@ public class CertificateViewAdapter extends RecyclerView.Adapter<CertificateView
 
     @Override
     public void onBindViewHolder(CertificateViewHolder holder, int position) {
-       Certificate certificate = certificateList.get(position);
-        holder.title.setText(certificate.gettitle());
-        holder.authority.setText(certificate.getauthority());
-        holder.Image_id.setImageResource(certificate.getCertificate_id());
+        holder.title.setText(certificateList.get(position).getTitle());
+        holder.authority.setText(certificateList.get(position).getAuthority());
+        context = holder.Image_id.getContext();
+        Picasso.with(context).load(certificateList.get(position).getUrl()).into(holder.Image_id);
+
         switch (getItemViewType(position)) {
             case TYPE_HEADER:
                 break;

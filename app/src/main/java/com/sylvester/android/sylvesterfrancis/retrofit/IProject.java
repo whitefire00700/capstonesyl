@@ -1,5 +1,7 @@
 package com.sylvester.android.sylvesterfrancis.retrofit;
 
+import com.sylvester.android.sylvesterfrancis.data.Project;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -12,5 +14,5 @@ import retrofit2.http.GET;
 public interface IProject {
 
     @GET("project.json")
-    Call<List<JSONResponse_Project>> getProject();
+    Call<List<Project>> getProject();
 }

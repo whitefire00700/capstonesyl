@@ -1,45 +1,49 @@
 package com.sylvester.android.sylvesterfrancis.data;
 
 /**
- * Created by sylvester on 01/08/17.
+ * Created by sylvester on 07/08/17.
  */
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Certificate {
-    private String certificate_title, certificate_authority;
-    private int certificate_id;
 
-    public Certificate() {}
+    @SerializedName("title")
+    @Expose
+    private String title;
+    @SerializedName("authority")
+    @Expose
+    private String authority;
+    @SerializedName("url")
+    @Expose
+    private String url;
 
-
-    public Certificate(String title, String authority,int image_id) {
-        this.certificate_title = title;
-        this.certificate_authority = authority;
-        this.certificate_id = image_id;
+    public String getTitle() {
+        return title;
     }
 
-
-    public String gettitle() {
-        return certificate_title;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-
-    public void settitle(String title) {
-        this.certificate_title = title;
+    public String getAuthority() {
+        return authority;
     }
 
-    public String getauthority() {
-        return certificate_authority;
+    public void setAuthority(String authority) {
+        this.authority = authority;
     }
 
-    public void setdescription(String authority) {
-        this.certificate_authority = authority;
+    public String getUrl() {
+        return url;
     }
 
-    public int getCertificate_id() {
-        return certificate_id;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public void setCertificate_id(int certificate_id) {
-        this.certificate_id = certificate_id;
-    }
 }
+
+
+

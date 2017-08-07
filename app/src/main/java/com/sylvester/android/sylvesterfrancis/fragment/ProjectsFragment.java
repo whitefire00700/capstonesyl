@@ -15,7 +15,7 @@ import com.github.florent37.materialviewpager.header.MaterialViewPagerHeaderDeco
 import com.sylvester.android.sylvesterfrancis.R;
 import com.sylvester.android.sylvesterfrancis.adapters.ProjectViewAdapter;
 import com.sylvester.android.sylvesterfrancis.retrofit.IProject;
-import com.sylvester.android.sylvesterfrancis.retrofit.JSONResponse_Project;
+import com.sylvester.android.sylvesterfrancis.data.Project;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ public class ProjectsFragment extends Fragment {
 
     private static final boolean GRID_LAYOUT = false;
     private static final int ITEM_COUNT = 1;
-    private ArrayList<JSONResponse_Project> projects;
+    private ArrayList<Project> projects;
     private ProjectViewAdapter adapter;
 
     @BindView(recyclerView)
@@ -88,12 +88,12 @@ public class ProjectsFragment extends Fragment {
                 .build();
 
         IProject request = retrofit.create(IProject.class);
-        Call<List<JSONResponse_Project>> call = request.getProject();
-        call.enqueue(new Callback<List<JSONResponse_Project>>() {
+        Call<List<Project>> call = request.getProject();
+        call.enqueue(new Callback<List<Project>>() {
             @Override
-            public void onResponse(Call<List<JSONResponse_Project>> call, Response<List<JSONResponse_Project>> response) {
+            public void onResponse(Call<List<Project>> call, Response<List<Project>> response) {
 
-                List<JSONResponse_Project> responseBody = response.body();
+                List<Project> responseBody = response.body();
 
                projects = new ArrayList<>(responseBody);
                 adapter = new ProjectViewAdapter(projects);
@@ -110,7 +110,7 @@ public class ProjectsFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<JSONResponse_Project>> call, Throwable t) {
+            public void onFailure(Call<List<Project>> call, Throwable t) {
                 Log.d("Debug", t.getMessage());
             }
         });
