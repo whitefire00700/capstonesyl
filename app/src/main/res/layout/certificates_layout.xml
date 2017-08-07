@@ -67,7 +67,7 @@
                         android:fontFamily="sans-serif-condensed"
                         android:textStyle="bold"
                         android:padding="5dp"
-                        android:text="Certificate Title" />
+                        tools:text="Certificate Title" />
 
                     <TextView
                         android:id="@+id/certificate_authority"
@@ -79,7 +79,7 @@
                         android:textSize="14sp"
                         android:fontFamily="sans-serif-condensed"
                         android:padding="5dp"
-                        android:text="Certificate Description" />
+                        tools:text="Certificate Description" />
 
 
                 </RelativeLayout>

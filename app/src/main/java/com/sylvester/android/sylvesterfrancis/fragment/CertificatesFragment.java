@@ -71,7 +71,7 @@ public class CertificatesFragment extends Fragment {
         //setup materialviewpager
     }
     private void loadJSON(){
-        Log.d("Debug","Loading the json file");
+        Log.d("Debug","Loading the Certificates json file");
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
         httpClientBuilder.networkInterceptors().add(new Interceptor() {
             @Override
