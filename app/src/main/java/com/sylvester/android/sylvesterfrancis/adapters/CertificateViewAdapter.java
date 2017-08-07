@@ -75,7 +75,7 @@ public class CertificateViewAdapter extends RecyclerView.Adapter<CertificateView
         holder.title.setText(certificateList.get(position).getTitle());
         holder.authority.setText(certificateList.get(position).getAuthority());
         context = holder.Image_id.getContext();
-        Picasso.with(context).load(certificateList.get(position).getUrl()).into(holder.Image_id);
+        Picasso.with(context).load(certificateList.get(position).getUrl()).placeholder(R.drawable.certificate).into(holder.Image_id);
 
         switch (getItemViewType(position)) {
             case TYPE_HEADER:
