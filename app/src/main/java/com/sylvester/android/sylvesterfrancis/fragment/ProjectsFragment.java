@@ -45,6 +45,7 @@ public class ProjectsFragment extends Fragment {
     private static final int ITEM_COUNT = 1;
     private ArrayList<Project> projects;
     private ProjectViewAdapter adapter;
+    List<Project> responseBody;
 
 
     @BindView(recyclerView)
@@ -64,6 +65,52 @@ public class ProjectsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
         loadJSON();
+    }
+
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        if(responseBody == null)
+        {
+            Log.d("Debug","Loading the project json file");
+            OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
+            httpClientBuilder.networkInterceptors().add(new Interceptor() {
+                @Override
+                public okhttp3.Response intercept(Chain chain) throws IOException {
+                    Request request = chain.request();
+                    Log.d("Debug"," Sending Request " + request.url().toString());
+                    okhttp3.Response response = chain.proceed(request);
+                    Log.d("Debug"," Receiving Response  " + response.code());
+                    return response;
+                }
+            });
+
+
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("http://sylvester-whitefire00700.rhcloud.com/json/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(httpClientBuilder.build())
+                    .build();
+
+            IProject request = retrofit.create(IProject.class);
+            Call<List<Project>> call = request.getProject();
+            call.enqueue(new Callback<List<Project>>() {
+                @Override
+                public void onResponse(Call<List<Project>> call, Response<List<Project>> response) {
+
+                    List<Project> responseBody = response.body();
+
+                    projects = new ArrayList<>(responseBody);
+                    adapter = new ProjectViewAdapter(projects);
+                }
+
+                @Override
+                public void onFailure(Call<List<Project>> call, Throwable t) {
+                    Log.d("Debug", t.getMessage());
+                }
+            });
+        }
     }
 
     private void loadJSON(){

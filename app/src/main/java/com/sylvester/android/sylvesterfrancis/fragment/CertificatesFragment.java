@@ -43,6 +43,7 @@ public class CertificatesFragment extends Fragment {
     private static final int ITEM_COUNT = 1;
     private ArrayList<Certificate> certificates;
     private CertificateViewAdapter adapter;
+    List<Certificate> responseBody;
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
@@ -62,6 +63,54 @@ public class CertificatesFragment extends Fragment {
         ButterKnife.bind(this, view);
         loadJSON();
     }
+
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        if(responseBody==null) {
+            Log.d("Debug","Loading the Certificate json file");
+            OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
+            httpClientBuilder.networkInterceptors().add(new Interceptor() {
+                @Override
+                public okhttp3.Response intercept(Chain chain) throws IOException {
+                    Request request = chain.request();
+                    Log.d("Debug"," Sending Request " + request.url().toString());
+                    okhttp3.Response response = chain.proceed(request);
+                    Log.d("Debug"," Receiving Response  " + response.code());
+                    return response;
+                }
+            });
+
+
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("http://sylvester-whitefire00700.rhcloud.com/json/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(httpClientBuilder.build())
+                    .build();
+
+            ICertificate request = retrofit.create(ICertificate.class);
+            Call<List<Certificate>> call = request.getCertificate();
+            call.enqueue(new Callback<List<Certificate>>() {
+                @Override
+                public void onResponse(Call<List<Certificate>> call, Response<List<Certificate>> response) {
+
+                    List<Certificate> responseBody = response.body();
+                    certificates = new ArrayList<>(responseBody);
+                    adapter = new CertificateViewAdapter(certificates);
+                }
+
+                @Override
+                public void onFailure(Call<List<Certificate>> call, Throwable t) {
+                    Log.d("Debug", t.getMessage());
+                }
+
+            });
+
+        }
+    }
+
+
     private void loadJSON(){
         Log.d("Debug","Loading the Certificate json file");
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
@@ -109,6 +158,7 @@ public class CertificatesFragment extends Fragment {
             public void onFailure(Call<List<Certificate>> call, Throwable t) {
                 Log.d("Debug", t.getMessage());
             }
+
         });
     }
 
