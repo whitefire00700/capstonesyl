@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    progressActivity:emptyBackgroundColor="#FFFFFF"
-    progressActivity:emptyContentTextColor="#000000"
+    progressActivity:emptyBackgroundColor="#000000"
+    progressActivity:emptyContentTextColor="#FFFFFF"
     progressActivity:errorBackgroundColor="#FFFFFF"
     progressActivity:errorContentTextColor="#000000"
     progressActivity:errorTitleTextColor="#FFFFFF"
     progressActivity:loadingBackgroundColor="#FFFFFF"
     progressActivity:loadingProgressBarColor="#000000">
+
 
 </com.vlonjatg.progressactivity.ProgressFrameLayout>

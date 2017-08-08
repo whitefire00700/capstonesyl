@@ -61,17 +61,9 @@ public class CertificatesFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
         loadJSON();
-
-
-        /*for (int i = 0; i < ITEM_COUNT; ++i) {
-            items.add(new Object());
-        } */
-
-
-        //setup materialviewpager
     }
     private void loadJSON(){
-        Log.d("Debug","Loading the Certificates json file");
+        Log.d("Debug","Loading the Certificate json file");
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
         httpClientBuilder.networkInterceptors().add(new Interceptor() {
             @Override

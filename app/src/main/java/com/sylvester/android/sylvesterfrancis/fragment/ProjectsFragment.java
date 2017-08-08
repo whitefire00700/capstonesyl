@@ -14,8 +14,8 @@ import android.view.ViewGroup;
 import com.github.florent37.materialviewpager.header.MaterialViewPagerHeaderDecorator;
 import com.sylvester.android.sylvesterfrancis.R;
 import com.sylvester.android.sylvesterfrancis.adapters.ProjectViewAdapter;
-import com.sylvester.android.sylvesterfrancis.retrofit.IProject;
 import com.sylvester.android.sylvesterfrancis.data.Project;
+import com.sylvester.android.sylvesterfrancis.retrofit.IProject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -46,6 +46,7 @@ public class ProjectsFragment extends Fragment {
     private ArrayList<Project> projects;
     private ProjectViewAdapter adapter;
 
+
     @BindView(recyclerView)
     RecyclerView mRecyclerView;
 
@@ -66,7 +67,7 @@ public class ProjectsFragment extends Fragment {
     }
 
     private void loadJSON(){
-        Log.d("Debug","Loading the json file");
+        Log.d("Debug","Loading the project json file");
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
         httpClientBuilder.networkInterceptors().add(new Interceptor() {
                     @Override

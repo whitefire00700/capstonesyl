@@ -1,5 +1,6 @@
 package com.sylvester.android.sylvesterfrancis;
 
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -38,18 +39,46 @@ public class MainActivity extends DrawerActivity  {
         setTitle("");
         ButterKnife.bind(this);
         progressRelativeLayout = (ProgressFrameLayout) findViewById(R.id.progress);
-        progressRelativeLayout.showLoading();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                progressRelativeLayout.showContent();
+        if(isInternetOn() == true) {
+            progressRelativeLayout.showLoading();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    progressRelativeLayout.showContent();
+                }
+            }, 4000);
             }
-        }, 5000);
+        else {
+            progressRelativeLayout.showLoading();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+            progressRelativeLayout.showEmpty(R.drawable.ic_no_connection_24dp_white, "Error No Internet Connection found",
+                    "Please switch on Wifi/MobileData to continue.");
+                }
+            }, 4000);
 
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    finish();
+                    startActivity(getIntent());
+                }
+            }, 5000);
+
+
+        }
         final Toolbar toolbar = mViewPager.getToolbar();
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
         mViewPager.getViewPager().setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
 
@@ -123,6 +152,7 @@ public class MainActivity extends DrawerActivity  {
             }
         });
 
+
         mViewPager.getViewPager().setOffscreenPageLimit(mViewPager.getViewPager().getAdapter().getCount());
         mViewPager.getPagerTitleStrip().setViewPager(mViewPager.getViewPager());
 
@@ -136,12 +166,33 @@ public class MainActivity extends DrawerActivity  {
                 }
             });
         }
-
-
-
     }
 
+    public boolean isInternetOn() {
+
+        // get Connectivity Manager object to check connection
+        ConnectivityManager connec =
+                (ConnectivityManager) getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+
+        // Check for network connections
+        if (connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTED ||
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED) {
 
 
+            return true;
+
+        } else if (
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.DISCONNECTED ||
+                        connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.DISCONNECTED) {
+
+
+            return false;
+        }
+        return false;
     }
+}
+
+
 
