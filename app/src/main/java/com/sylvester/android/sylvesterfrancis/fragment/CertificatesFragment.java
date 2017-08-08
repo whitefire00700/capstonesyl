@@ -91,7 +91,6 @@ public class CertificatesFragment extends Fragment {
             public void onResponse(Call<List<Certificate>> call, Response<List<Certificate>> response) {
 
                 List<Certificate> responseBody = response.body();
-
                 certificates = new ArrayList<>(responseBody);
                 adapter = new CertificateViewAdapter(certificates);
                 if (GRID_LAYOUT) {
