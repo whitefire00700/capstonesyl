@@ -1,7 +1,11 @@
 package com.sylvester.android.sylvesterfrancis.fragment;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -48,6 +52,7 @@ public class ProjectsFragment extends Fragment {
     List<Project> responseBody;
 
 
+
     @BindView(recyclerView)
     RecyclerView mRecyclerView;
 
@@ -64,13 +69,30 @@ public class ProjectsFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
-        loadJSON();
+        ConnectivityManager connMgr = (ConnectivityManager) getActivity()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+        if (networkInfo != null && networkInfo.isConnected()) {
+            loadJSON();
+        } else {
+            Snackbar.make(getActivity().findViewById(android.R.id.content),
+                    "Please Check internet connection and Restart App", Snackbar.LENGTH_LONG).show();
+        }
+
+
+
     }
 
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
-        if(responseBody == null)
+        ConnectivityManager connMgr = (ConnectivityManager) getActivity()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if(networkInfo != null && networkInfo.isConnected() && responseBody == null)
         {
             Log.d("Debug","Loading the project json file");
             OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
@@ -110,6 +132,9 @@ public class ProjectsFragment extends Fragment {
                     Log.d("Debug", t.getMessage());
                 }
             });
+        }
+        else {
+            Snackbar.make(getActivity().findViewById(android.R.id.content),"Please Check internet connection and Restart App",Snackbar.LENGTH_LONG).show();
         }
     }
 

@@ -424,7 +424,7 @@
             app:cardCornerRadius="2dp"
             app:cardElevation="2dp"
             app:cardPreventCornerOverlap="false"
-            app:contentPadding="15dp"
+            app:contentPadding="5dp"
             android:layout_below="@+id/card_view3">
 
             <ScrollView
@@ -466,7 +466,6 @@
                     <ImageView android:id="@+id/map"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
                         android:layout_below="@+id/location_text"
                         />
                 </RelativeLayout>

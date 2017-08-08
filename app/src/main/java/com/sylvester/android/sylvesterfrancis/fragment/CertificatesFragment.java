@@ -1,7 +1,11 @@
 package com.sylvester.android.sylvesterfrancis.fragment;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,8 +18,8 @@ import android.view.ViewGroup;
 import com.github.florent37.materialviewpager.header.MaterialViewPagerHeaderDecorator;
 import com.sylvester.android.sylvesterfrancis.R;
 import com.sylvester.android.sylvesterfrancis.adapters.CertificateViewAdapter;
-import com.sylvester.android.sylvesterfrancis.retrofit.ICertificate;
 import com.sylvester.android.sylvesterfrancis.data.Certificate;
+import com.sylvester.android.sylvesterfrancis.retrofit.ICertificate;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,6 +56,7 @@ public class CertificatesFragment extends Fragment {
         return new RecyclerViewFragment();
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_recyclerview, container, false);
@@ -61,13 +66,27 @@ public class CertificatesFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
-        loadJSON();
+        ConnectivityManager connMgr = (ConnectivityManager) getActivity()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+        if (networkInfo != null && networkInfo.isConnected()) {
+            loadJSON();
+        } else {
+            Snackbar.make(getActivity().findViewById(android.R.id.content),
+                    "Please Check internet connection and Restart App", Snackbar.LENGTH_LONG).show();
+        }
     }
 
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
-        if(responseBody==null) {
+        ConnectivityManager connMgr = (ConnectivityManager) getActivity()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if(networkInfo != null && networkInfo.isConnected() && responseBody==null) {
             Log.d("Debug","Loading the Certificate json file");
             OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
             httpClientBuilder.networkInterceptors().add(new Interceptor() {
@@ -107,6 +126,9 @@ public class CertificatesFragment extends Fragment {
 
             });
 
+        }
+        else {
+            Snackbar.make(getActivity().findViewById(android.R.id.content),"Please Check internet connection and Restart App",Snackbar.LENGTH_LONG).show();
         }
     }
 
