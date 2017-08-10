@@ -6,7 +6,7 @@ android {
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "com.sylvester.android.sylvesterfrancis"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -19,6 +19,16 @@ android {
         }
     }
 }
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '25.3.0'
+            }
+        }
+    }
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -28,7 +38,6 @@ dependencies {
     compile('com.crashlytics.sdk.android:crashlytics:2.4.0@aar') {
         transitive = true;
     }
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:cardview-v7:26.+'
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:design:26.+'
@@ -44,6 +53,12 @@ dependencies {
     compile 'com.github.vlonjatg:progress-activity:v2.0.3'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.1.0'
-    compile 'com.google.android.gms:play-services-maps:11.0.2'
-
+    compile 'com.google.android.gms:play-services-maps:11.0.4'
+    compile'com.google.firebase:firebase-database:11.0.4'
+    compile 'com.firebaseui:firebase-ui:2.2.0'
+    compile 'com.google.firebase:firebase-storage:11.0.4'
+    compile "com.android.support:support-core-utils:26.+"
+    compile 'com.google.firebase:firebase-messaging:11.0.4'
+    compile 'com.google.firebase:firebase-config:11.0.4'
 }
+apply plugin: 'com.google.gms.google-services'

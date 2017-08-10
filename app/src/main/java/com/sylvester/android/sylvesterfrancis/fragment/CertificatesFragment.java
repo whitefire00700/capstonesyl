@@ -130,6 +130,7 @@ public class CertificatesFragment extends Fragment {
         else {
             Snackbar.make(getActivity().findViewById(android.R.id.content),"Please Check internet connection and Restart App",Snackbar.LENGTH_LONG).show();
         }
+
     }
 
 
