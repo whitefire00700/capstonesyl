@@ -12,6 +12,8 @@
     app:pstsIndicatorHeight="2dp"
     app:pstsShouldExpand="true"
     app:pstsTabPaddingLeftRight="10dp"
+    app:pstsTabTextSize="13sp"
+    app:pstsTabTextFontFamily="sans-serif-condensed"
     app:pstsTabTextAllCaps="true"
     tools:background="#A333"
     />

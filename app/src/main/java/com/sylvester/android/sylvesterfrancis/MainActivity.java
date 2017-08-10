@@ -84,7 +84,7 @@ public class MainActivity extends DrawerActivity  {
 
             @Override
             public Fragment getItem(int position) {
-                switch (position % 4) {
+                switch (position % 5) {
                     case 0:
                         AboutMeFragment about = new AboutMeFragment();
                         return about;
@@ -97,7 +97,8 @@ public class MainActivity extends DrawerActivity  {
                     case 3:
                         ContactMeFragment contact = new ContactMeFragment();
                         return contact;
-
+                    case 4:
+                        return RecyclerViewFragment.newInstance();
                     default:
                         return RecyclerViewFragment.newInstance();
                 }
@@ -105,12 +106,12 @@ public class MainActivity extends DrawerActivity  {
 
             @Override
             public int getCount() {
-                return 4;
+                return 5;
             }
 
             @Override
             public CharSequence getPageTitle(int position) {
-                switch (position % 4) {
+                switch (position % 5) {
                     case 0:
                         return "About Me";
                     case 1:
@@ -119,6 +120,8 @@ public class MainActivity extends DrawerActivity  {
                         return "Projects";
                     case 3:
                         return "Contact me";
+                    case 4:
+                        return "Chat";
                 }
                 return "";
             }
@@ -144,6 +147,11 @@ public class MainActivity extends DrawerActivity  {
                         return HeaderDesign.fromColorResAndUrl(
                                 R.color.navigationBarColor,
                                 "http://imgur.com/f3ca10a");
+                    case 4:
+                        return HeaderDesign.fromColorResAndUrl(
+                                R.color.navigationBarColor,
+                                "http://imgur.com/f3ca10a");
+
                 }
 
                 //execute others actions if needed (ex : modify your header logo)
