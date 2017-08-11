@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Toast;
 
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
@@ -52,8 +51,8 @@ public class MainActivity extends DrawerActivity  {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-            progressRelativeLayout.showEmpty(R.drawable.ic_no_connection_24dp_white, "Error No Internet Connection found",
-                    "Please switch on Wifi/MobileData to continue.");
+            progressRelativeLayout.showEmpty(R.drawable.ic_no_connection_24dp_white, String.valueOf(R.string.error_line1),
+                    String.valueOf(R.string.error_line2));
                 }
             }, 4000);
 
@@ -112,13 +111,13 @@ public class MainActivity extends DrawerActivity  {
             public CharSequence getPageTitle(int position) {
                 switch (position % 4) {
                     case 0:
-                        return "About Me";
+                        return String.valueOf(R.string.tab1);
                     case 1:
-                        return "Certificates";
+                        return String.valueOf(R.string.tab2);
                     case 2:
-                        return "Projects";
+                        return String.valueOf(R.string.tab3);
                     case 3:
-                        return "Contact me";
+                        return String.valueOf(R.string.tab4);
                 }
                 return "";
             }
@@ -127,23 +126,24 @@ public class MainActivity extends DrawerActivity  {
         mViewPager.setMaterialViewPagerListener(new MaterialViewPager.Listener() {
             @Override
             public HeaderDesign getHeaderDesign(int page) {
+                String image_url = "http://imgur.com/f3ca10a";
                 switch (page) {
                     case 0:
                         return HeaderDesign.fromColorResAndUrl(
                                 R.color.navigationBarColor,
-                                "http://imgur.com/f3ca10a");
+                                image_url);
                     case 1:
                         return HeaderDesign.fromColorResAndUrl(
                                 R.color.navigationBarColor,
-                                "http://imgur.com/f3ca10a");
+                                image_url);
                     case 2:
                         return HeaderDesign.fromColorResAndUrl(
                                 R.color.navigationBarColor,
-                                "http://imgur.com/f3ca10a");
+                                image_url);
                     case 3:
                         return HeaderDesign.fromColorResAndUrl(
                                 R.color.navigationBarColor,
-                                "http://imgur.com/f3ca10a");
+                                image_url);
 
                 }
 
@@ -163,7 +163,7 @@ public class MainActivity extends DrawerActivity  {
                 @Override
                 public void onClick(View v) {
                     mViewPager.notifyHeaderChanged();
-                    Toast.makeText(getApplicationContext(), "Yes, the title is clickable", Toast.LENGTH_SHORT).show();
+
                 }
             });
         }

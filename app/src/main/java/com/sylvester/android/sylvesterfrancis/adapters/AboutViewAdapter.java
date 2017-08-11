@@ -70,10 +70,12 @@ public class AboutViewAdapter extends RecyclerView.Adapter<AboutViewAdapter.Abou
     @Override
     public void onBindViewHolder(AboutViewHolder holder, int position) {
        Context context_map = holder.Map.getContext();
-        Picasso.with(context_map).load("https://maps.googleapis.com/maps/api/staticmap?center=Choolaimedu,Chennai,TamilNadu&zoom=14&size=1000x1000&key=AIzaSyC_FVwRpGXA-2QkLcU6ELnsEBwE8erHPEY").resize(1000, 1000)
+        String Map_Url = "https://maps.googleapis.com/maps/api/staticmap?center=Choolaimedu,Chennai,TamilNadu&zoom=14&size=1000x1000&key=AIzaSyC_FVwRpGXA-2QkLcU6ELnsEBwE8erHPEY";
+        Picasso.with(context_map).load(Map_Url).resize(1000, 1000)
                 .centerCrop().into(holder.Map);
         Context context_header = holder.Header.getContext();
-        Picasso.with(context_header).load("http://sylvester-whitefire00700.rhcloud.com/images/img.png").placeholder(R.drawable.img1).into(holder.Header);
+        String header_img_url = "http://sylvester-whitefire00700.rhcloud.com/images/img.png";
+        Picasso.with(context_header).load(header_img_url).placeholder(R.drawable.img1).into(holder.Header);
         switch (getItemViewType(position)) {
             case TYPE_HEADER:
                 break;
