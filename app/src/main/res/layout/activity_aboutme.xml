@@ -44,7 +44,7 @@
                         android:id="@+id/title_about"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Android|MeanStackDeveloper|Geek"
+                        android:text="@string/header_title"
                         android:textAlignment="center"
                         android:textSize="18sp"
                         android:fontFamily="sans-serif-smallcaps"
@@ -119,7 +119,7 @@
                         <TextView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:text="My Skills:"
+                            android:text="@string/skills_title"
                             android:textAlignment="center"
                             android:textSize="20sp"
                             android:fontFamily="sans-serif-smallcaps"
@@ -136,7 +136,7 @@
                             <TextView
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Android"
+                                android:text="@string/skill1"
                                 android:textStyle="bold|italic"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
@@ -155,7 +155,7 @@
                             <TextView
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="AngularJS"
+                                android:text="@string/skill2"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
                                 android:textStyle="bold|italic"
@@ -175,7 +175,7 @@
                             <TextView
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="NodeJS"
+                                android:text="@string/skill3"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
                                 android:textStyle="bold|italic"
@@ -195,7 +195,7 @@
                             <TextView
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="MongoDB"
+                                android:text="@string/skill4"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
                                 android:fontFamily="sans-serif-condensed"
@@ -215,7 +215,7 @@
                             <TextView
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Python"
+                                android:text="@string/skill5"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
                                 android:fontFamily="sans-serif-condensed"
@@ -235,7 +235,7 @@
                             <TextView
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="SQL"
+                                android:text="@string/skill6"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
                                 android:fontFamily="sans-serif-condensed"
@@ -255,7 +255,7 @@
                             <TextView
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="PHP"
+                                android:text="@string/skill7"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
                                 android:fontFamily="sans-serif-condensed"
@@ -275,7 +275,7 @@
                             <TextView
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="HTML 5"
+                                android:text="@string/skill8"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
                                 android:fontFamily="sans-serif-condensed"
@@ -294,7 +294,7 @@
                             <TextView
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Swift"
+                                android:text="@string/skill9"
                                 android:textAlignment="center"
                                 android:textSize="18sp"
                                 android:fontFamily="sans-serif-condensed"
@@ -343,7 +343,7 @@
                         <TextView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:text="Experience:"
+                            android:text="@string/experience_title"
                             android:textAlignment="center"
                             android:textSize="20sp"
                             android:fontFamily="sans-serif-small"
@@ -447,7 +447,7 @@
                         android:id="@+id/location_title"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Location:"
+                        android:text="@string/location_title"
                         android:textAlignment="center"
                         android:textSize="20sp"
                         android:fontFamily="sans-serif-condensed"
@@ -456,7 +456,7 @@
                         android:id="@+id/location_text"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="I live in Chennai,TamilNadu,India"
+                        android:text="@string/location_name"
                         android:textAlignment="center"
                         android:textSize="18sp"
                         android:fontFamily="sans-serif-condensed"

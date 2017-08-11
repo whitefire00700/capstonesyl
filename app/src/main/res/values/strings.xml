@@ -17,6 +17,7 @@
     <string name="contact_form_button">Send Message</string>
     <string name="contact_form_post_message">Please wait! We\'re sending your message to the support department...</string>
     <string name="contact_posted">Your message has been successfully delivered.</string>
+    <string name="header_title">Android|MeanStackDeveloper|Geek</string>
     <string name="about_para1">Hi, I\'m Sylvester Francis, a freelance MEAN Stack and Android developer/Tech enthusiast.</string>
     <string name="about_para2">My journey started off as a curious boy baffled by how computers could simplify our lives. Now I\'m interested in honing my skills to become a better programmer and show other people the wonders that computers are truly capable of.</string>
     <string name="about_para3">Take a look at my skills,if you have an interesting app idea or want to meet me to discuss anything tech-related,feel free to contact me.</string>
@@ -35,4 +36,19 @@ https://www.sathya.in  </string>
     <string name="experience_title2">Digital Meridian Technology Solutions Private Limited - Freelance MEAN Stack Developer</string>
     <string name="experience_time2">\n February 2017 - May 2017 </string>
     <string name="jd2">\n 1.Worked as a Freelance MEAN Stack Developer \n 2.Played a pivotal role in building a MEAN Stack ERP solution for an Automobile parts manufacturing company  \n 3.Providing Tech-Support for the above mentioned solution</string>
+    <string name="skills_title">My Skills:</string>
+    <string name="skill1">Android</string>
+    <string name="skill2">AngularJS</string>
+    <string name="skill3">NodeJS</string>
+    <string name="skill4">MongoDB</string>
+    <string name="skill5">Python</string>
+    <string name="skill6">SQL</string>
+    <string name="skill7">PHP</string>
+    <string name="skill8">HTML 5</string>
+    <string name="skill9">Swift</string>
+    <string name="experience_title">Experience:</string>
+    <string name="location_title">Location:</string>
+    <string name="location_name">I live in Chennai,TamilNadu,India</string>
+
+
 </resources>
