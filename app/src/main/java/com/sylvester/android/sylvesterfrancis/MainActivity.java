@@ -51,8 +51,8 @@ public class MainActivity extends DrawerActivity  {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-            progressRelativeLayout.showEmpty(R.drawable.ic_no_connection_24dp_white, String.valueOf(R.string.error_line1),
-                    String.valueOf(R.string.error_line2));
+            progressRelativeLayout.showEmpty(R.drawable.ic_no_connection_24dp_white, "Error No Internet Connection found",
+                    "Please switch on Wifi/MobileData to continue.");
                 }
             }, 4000);
 
