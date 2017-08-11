@@ -17,9 +17,6 @@ import com.sylvester.android.sylvesterfrancis.R;
 
 import io.fabric.sdk.android.Fabric;
 
-/**
- * Created by florentchampigny on 27/05/2016.
- */
 public class DrawerActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawer;
