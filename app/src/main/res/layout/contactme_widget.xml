@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Reach me at:"
+            android:text="@string/reach_me"
             android:textAlignment="center"
             android:textSize="24sp"
             android:fontFamily="sans-serif-smallcaps"

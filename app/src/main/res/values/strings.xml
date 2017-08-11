@@ -49,6 +49,9 @@ https://www.sathya.in  </string>
     <string name="experience_title">Experience:</string>
     <string name="location_title">Location:</string>
     <string name="location_name">I live in Chennai,TamilNadu,India</string>
-
+    <string name="certificate_title">Certificate Title</string>
+    <string name="certificate_authority">Certificate Description</string>
+    <string name="contact_title">Contact Me</string>
+    <string name="reach_me">Reach me at:</string>
 
 </resources>
