@@ -31,7 +31,6 @@ public class MainActivity extends DrawerActivity  {
     @BindView(R.id.materialViewPager)
     MaterialViewPager mViewPager;
     ProgressFrameLayout progressRelativeLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +67,8 @@ public class MainActivity extends DrawerActivity  {
 
 
         }
+
+
         final Toolbar toolbar = mViewPager.getToolbar();
         if (toolbar != null) {
             setSupportActionBar(toolbar);
@@ -97,8 +98,6 @@ public class MainActivity extends DrawerActivity  {
                     case 3:
                         ContactMeFragment contact = new ContactMeFragment();
                         return contact;
-                    case 4:
-                        return RecyclerViewFragment.newInstance();
                     default:
                         return RecyclerViewFragment.newInstance();
                 }
@@ -106,12 +105,12 @@ public class MainActivity extends DrawerActivity  {
 
             @Override
             public int getCount() {
-                return 5;
+                return 4;
             }
 
             @Override
             public CharSequence getPageTitle(int position) {
-                switch (position % 5) {
+                switch (position % 4) {
                     case 0:
                         return "About Me";
                     case 1:
@@ -120,8 +119,6 @@ public class MainActivity extends DrawerActivity  {
                         return "Projects";
                     case 3:
                         return "Contact me";
-                    case 4:
-                        return "Chat";
                 }
                 return "";
             }
@@ -144,10 +141,6 @@ public class MainActivity extends DrawerActivity  {
                                 R.color.navigationBarColor,
                                 "http://imgur.com/f3ca10a");
                     case 3:
-                        return HeaderDesign.fromColorResAndUrl(
-                                R.color.navigationBarColor,
-                                "http://imgur.com/f3ca10a");
-                    case 4:
                         return HeaderDesign.fromColorResAndUrl(
                                 R.color.navigationBarColor,
                                 "http://imgur.com/f3ca10a");
@@ -200,6 +193,8 @@ public class MainActivity extends DrawerActivity  {
         }
         return false;
     }
+
+
 }
 
 

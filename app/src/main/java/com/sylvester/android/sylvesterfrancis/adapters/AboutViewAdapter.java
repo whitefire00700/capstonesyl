@@ -27,7 +27,6 @@ public class AboutViewAdapter extends RecyclerView.Adapter<AboutViewAdapter.Abou
 
     public class AboutViewHolder extends RecyclerView.ViewHolder {
         public ImageView Map,Header;
-        public Context context_map,context_header;
 
         public AboutViewHolder(View view) {
             super(view);
