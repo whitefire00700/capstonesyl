@@ -75,7 +75,7 @@ public class CertificatesFragment extends Fragment {
             loadJSON();
         } else {
             Snackbar.make(getActivity().findViewById(android.R.id.content),
-                    String.valueOf(R.string.error_line3), Snackbar.LENGTH_LONG).show();
+                    "Please Check internet connection and Restart App", Snackbar.LENGTH_LONG).show();
         }
     }
 

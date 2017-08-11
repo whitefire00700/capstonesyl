@@ -84,7 +84,7 @@ public class MainActivity extends DrawerActivity  {
 
             @Override
             public Fragment getItem(int position) {
-                switch (position % 5) {
+                switch (position % 4) {
                     case 0:
                         AboutMeFragment about = new AboutMeFragment();
                         return about;
@@ -111,13 +111,13 @@ public class MainActivity extends DrawerActivity  {
             public CharSequence getPageTitle(int position) {
                 switch (position % 4) {
                     case 0:
-                        return String.valueOf(R.string.tab1);
+                        return "About Me";
                     case 1:
-                        return String.valueOf(R.string.tab2);
+                        return "Certificates";
                     case 2:
-                        return String.valueOf(R.string.tab3);
+                        return "Projects";
                     case 3:
-                        return String.valueOf(R.string.tab4);
+                        return "Contact Me";
                 }
                 return "";
             }
