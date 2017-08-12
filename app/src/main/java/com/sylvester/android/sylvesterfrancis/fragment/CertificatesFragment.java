@@ -48,6 +48,7 @@ public class CertificatesFragment extends Fragment {
     private ArrayList<Certificate> certificates;
     private CertificateViewAdapter adapter;
     List<Certificate> responseBody;
+    View empty_view;
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
@@ -75,8 +76,7 @@ public class CertificatesFragment extends Fragment {
         if (networkInfo != null && networkInfo.isConnected()) {
             loadJSON();
         } else {
-            Snackbar.make(getActivity().findViewById(android.R.id.content),
-                    snack_bar_error, Snackbar.LENGTH_LONG).show();
+            Snackbar.make(getActivity().findViewById(android.R.id.content),snack_bar_error,Snackbar.LENGTH_LONG).show();
         }
     }
 
@@ -134,6 +134,117 @@ public class CertificatesFragment extends Fragment {
             Snackbar.make(getActivity().findViewById(android.R.id.content),snack_bar_error,Snackbar.LENGTH_LONG).show();
         }
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        String snack_bar_error = getString(R.string.error_line3);
+        ConnectivityManager connMgr = (ConnectivityManager) getActivity()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if(networkInfo != null && networkInfo.isConnected() && responseBody==null) {
+            Log.d("Debug","Loading the Certificate json file");
+            OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
+            httpClientBuilder.networkInterceptors().add(new Interceptor() {
+                @Override
+                public okhttp3.Response intercept(Chain chain) throws IOException {
+                    Request request = chain.request();
+                    Log.d("Debug"," Sending Request " + request.url().toString());
+                    okhttp3.Response response = chain.proceed(request);
+                    Log.d("Debug"," Receiving Response  " + response.code());
+                    return response;
+                }
+            });
+
+
+            String Url = "http://sylvester-whitefire00700.rhcloud.com/json/";
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(Url)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(httpClientBuilder.build())
+                    .build();
+
+            ICertificate request = retrofit.create(ICertificate.class);
+            Call<List<Certificate>> call = request.getCertificate();
+            call.enqueue(new Callback<List<Certificate>>() {
+                @Override
+                public void onResponse(Call<List<Certificate>> call, Response<List<Certificate>> response) {
+
+                    List<Certificate> responseBody = response.body();
+                    certificates = new ArrayList<>(responseBody);
+                    adapter = new CertificateViewAdapter(certificates);
+                }
+
+                @Override
+                public void onFailure(Call<List<Certificate>> call, Throwable t) {
+                    Log.d("Debug", t.getMessage());
+                }
+
+            });
+
+        }
+        else {
+            Snackbar.make(getActivity().findViewById(android.R.id.content),snack_bar_error,Snackbar.LENGTH_LONG).show();
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        String snack_bar_error = getString(R.string.error_line3);
+        ConnectivityManager connMgr = (ConnectivityManager) getActivity()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if(networkInfo != null && networkInfo.isConnected() && responseBody==null) {
+            Log.d("Debug","Loading the Certificate json file");
+            OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
+            httpClientBuilder.networkInterceptors().add(new Interceptor() {
+                @Override
+                public okhttp3.Response intercept(Chain chain) throws IOException {
+                    Request request = chain.request();
+                    Log.d("Debug"," Sending Request " + request.url().toString());
+                    okhttp3.Response response = chain.proceed(request);
+                    Log.d("Debug"," Receiving Response  " + response.code());
+                    return response;
+                }
+            });
+
+
+            String Url = "http://sylvester-whitefire00700.rhcloud.com/json/";
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(Url)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(httpClientBuilder.build())
+                    .build();
+
+            ICertificate request = retrofit.create(ICertificate.class);
+            Call<List<Certificate>> call = request.getCertificate();
+            call.enqueue(new Callback<List<Certificate>>() {
+                @Override
+                public void onResponse(Call<List<Certificate>> call, Response<List<Certificate>> response) {
+
+                    List<Certificate> responseBody = response.body();
+                    certificates = new ArrayList<>(responseBody);
+                    adapter = new CertificateViewAdapter(certificates);
+                }
+
+                @Override
+                public void onFailure(Call<List<Certificate>> call, Throwable t) {
+                    Log.d("Debug", t.getMessage());
+                }
+
+            });
+
+        }
+        else {
+            Snackbar.make(getActivity().findViewById(android.R.id.content),snack_bar_error,Snackbar.LENGTH_LONG).show();
+        }
     }
 
 

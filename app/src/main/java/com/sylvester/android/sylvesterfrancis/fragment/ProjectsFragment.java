@@ -140,6 +140,116 @@ public class ProjectsFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        String snack_bar_error = getString(R.string.error_line3);
+        ConnectivityManager connMgr = (ConnectivityManager) getActivity()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if(networkInfo != null && networkInfo.isConnected() && responseBody == null)
+        {
+            Log.d("Debug","Loading the project json file");
+            OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
+            httpClientBuilder.networkInterceptors().add(new Interceptor() {
+                @Override
+                public okhttp3.Response intercept(Chain chain) throws IOException {
+                    Request request = chain.request();
+                    Log.d("Debug"," Sending Request " + request.url().toString());
+                    okhttp3.Response response = chain.proceed(request);
+                    Log.d("Debug"," Receiving Response  " + response.code());
+                    return response;
+                }
+            });
+
+            String Url = "http://sylvester-whitefire00700.rhcloud.com/json/";
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(Url)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(httpClientBuilder.build())
+                    .build();
+
+            IProject request = retrofit.create(IProject.class);
+            Call<List<Project>> call = request.getProject();
+            call.enqueue(new Callback<List<Project>>() {
+                @Override
+                public void onResponse(Call<List<Project>> call, Response<List<Project>> response) {
+
+                    List<Project> responseBody = response.body();
+
+                    projects = new ArrayList<>(responseBody);
+                    adapter = new ProjectViewAdapter(projects);
+                }
+
+                @Override
+                public void onFailure(Call<List<Project>> call, Throwable t) {
+                    Log.d("Debug", t.getMessage());
+                }
+            });
+        }
+        else {
+            Snackbar.make(getActivity().findViewById(android.R.id.content),snack_bar_error,Snackbar.LENGTH_LONG).show();
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        String snack_bar_error = getString(R.string.error_line3);
+        ConnectivityManager connMgr = (ConnectivityManager) getActivity()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if(networkInfo != null && networkInfo.isConnected() && responseBody == null)
+        {
+            Log.d("Debug","Loading the project json file");
+            OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
+            httpClientBuilder.networkInterceptors().add(new Interceptor() {
+                @Override
+                public okhttp3.Response intercept(Chain chain) throws IOException {
+                    Request request = chain.request();
+                    Log.d("Debug"," Sending Request " + request.url().toString());
+                    okhttp3.Response response = chain.proceed(request);
+                    Log.d("Debug"," Receiving Response  " + response.code());
+                    return response;
+                }
+            });
+
+            String Url = "http://sylvester-whitefire00700.rhcloud.com/json/";
+
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(Url)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(httpClientBuilder.build())
+                    .build();
+
+            IProject request = retrofit.create(IProject.class);
+            Call<List<Project>> call = request.getProject();
+            call.enqueue(new Callback<List<Project>>() {
+                @Override
+                public void onResponse(Call<List<Project>> call, Response<List<Project>> response) {
+
+                    List<Project> responseBody = response.body();
+
+                    projects = new ArrayList<>(responseBody);
+                    adapter = new ProjectViewAdapter(projects);
+                }
+
+                @Override
+                public void onFailure(Call<List<Project>> call, Throwable t) {
+                    Log.d("Debug", t.getMessage());
+                }
+            });
+        }
+        else {
+            Snackbar.make(getActivity().findViewById(android.R.id.content),snack_bar_error,Snackbar.LENGTH_LONG).show();
+        }
+
+    }
+
     private void loadJSON(){
         Log.d("Debug","Loading the project json file");
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();

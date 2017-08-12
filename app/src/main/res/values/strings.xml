@@ -60,4 +60,6 @@ https://www.sathya.in  </string>
     <string name="error_line1">Error No Internet Connection found \n Please switch on Wifi/MobileData to continue.</string>
     <string name="error_line2">Please switch on Wifi/MobileData to continue.</string>
     <string name="error_line3">Please Check internet connection and Restart App</string>
+    <string name="empty_view_title_text">I\'m having trouble connecting to my server</string>
+    <string name="empty_view_subtitle_text">please check the internet connection and restart app</string>
 </resources>
