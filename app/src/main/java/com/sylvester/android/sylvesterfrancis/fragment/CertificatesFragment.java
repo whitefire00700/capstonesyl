@@ -65,6 +65,7 @@ public class CertificatesFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        String snack_bar_error = getString(R.string.error_line3);
         ButterKnife.bind(this, view);
         ConnectivityManager connMgr = (ConnectivityManager) getActivity()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -75,13 +76,14 @@ public class CertificatesFragment extends Fragment {
             loadJSON();
         } else {
             Snackbar.make(getActivity().findViewById(android.R.id.content),
-                    "Please Check internet connection and Restart App", Snackbar.LENGTH_LONG).show();
+                    snack_bar_error, Snackbar.LENGTH_LONG).show();
         }
     }
 
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
+        String snack_bar_error = getString(R.string.error_line3);
         ConnectivityManager connMgr = (ConnectivityManager) getActivity()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -129,7 +131,7 @@ public class CertificatesFragment extends Fragment {
 
         }
         else {
-            Snackbar.make(getActivity().findViewById(android.R.id.content),String.valueOf(R.string.error_line3),Snackbar.LENGTH_LONG).show();
+            Snackbar.make(getActivity().findViewById(android.R.id.content),snack_bar_error,Snackbar.LENGTH_LONG).show();
         }
 
     }

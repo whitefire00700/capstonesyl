@@ -57,7 +57,7 @@ https://www.sathya.in  </string>
     <string name="tab2">Certificates</string>
     <string name="tab3">Projects</string>
     <string name="tab4">Contact me</string>
-    <string name="error_line1">Error No Internet Connection found</string>
+    <string name="error_line1">Error No Internet Connection found \n Please switch on Wifi/MobileData to continue.</string>
     <string name="error_line2">Please switch on Wifi/MobileData to continue.</string>
     <string name="error_line3">Please Check internet connection and Restart App</string>
 </resources>

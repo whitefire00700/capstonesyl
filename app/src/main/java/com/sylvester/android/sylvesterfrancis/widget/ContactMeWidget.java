@@ -13,7 +13,7 @@ import com.sylvester.android.sylvesterfrancis.R;
  * Created by sylvester on 05/08/17.
  */
 
-public class ContactMe_Widget extends AppWidgetProvider {
+public class ContactMeWidget extends AppWidgetProvider {
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -25,7 +25,7 @@ public class ContactMe_Widget extends AppWidgetProvider {
                     R.layout.contactme_widget);
 
 
-            Intent intent = new Intent(context, ContactMe_Widget.class);
+            Intent intent = new Intent(context, ContactMeWidget.class);
             intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(context,

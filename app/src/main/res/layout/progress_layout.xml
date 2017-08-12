@@ -7,7 +7,7 @@
     progressActivity:emptyBackgroundColor="#000000"
     progressActivity:emptyContentTextColor="#FFFFFF"
     progressActivity:errorBackgroundColor="#FFFFFF"
-    progressActivity:errorContentTextColor="#000000"
+    progressActivity:errorContentTextColor="#FFFFFF"
     progressActivity:errorTitleTextColor="#FFFFFF"
     progressActivity:loadingBackgroundColor="#FFFFFF"
     progressActivity:loadingProgressBarColor="#000000">

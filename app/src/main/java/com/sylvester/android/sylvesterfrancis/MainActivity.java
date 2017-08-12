@@ -1,6 +1,8 @@
 package com.sylvester.android.sylvesterfrancis;
 
+import android.content.Context;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -30,6 +32,9 @@ public class MainActivity extends DrawerActivity  {
     @BindView(R.id.materialViewPager)
     MaterialViewPager mViewPager;
     ProgressFrameLayout progressRelativeLayout;
+    String tab1,tab2,tab3,tab4,errormsg1,errormsg2;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +42,13 @@ public class MainActivity extends DrawerActivity  {
         setTitle("");
         ButterKnife.bind(this);
         progressRelativeLayout = (ProgressFrameLayout) findViewById(R.id.progress);
-        if(isInternetOn() == true) {
+        tab1 = getString(R.string.tab1);
+        tab2 = getString(R.string.tab2);
+        tab3= getString(R.string.tab3);
+        tab4= getString(R.string.tab4);
+        errormsg1=getString(R.string.error_line1);
+        errormsg2=getString(R.string.error_line2);
+        if(isDataConnectionAvailable(this) == true) {
             progressRelativeLayout.showLoading();
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -51,8 +62,8 @@ public class MainActivity extends DrawerActivity  {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-            progressRelativeLayout.showEmpty(R.drawable.ic_no_connection_24dp_white, "Error No Internet Connection found",
-                    "Please switch on Wifi/MobileData to continue.");
+            progressRelativeLayout.showEmpty(R.drawable.ic_no_connection_24dp_white, errormsg2,errormsg1
+                    );
                 }
             }, 4000);
 
@@ -111,13 +122,13 @@ public class MainActivity extends DrawerActivity  {
             public CharSequence getPageTitle(int position) {
                 switch (position % 4) {
                     case 0:
-                        return "About Me";
+                        return tab1;
                     case 1:
-                        return "Certificates";
+                        return tab2;
                     case 2:
-                        return "Projects";
+                        return tab3;
                     case 3:
-                        return "Contact Me";
+                        return tab4;
                 }
                 return "";
             }
@@ -169,29 +180,11 @@ public class MainActivity extends DrawerActivity  {
         }
     }
 
-    public boolean isInternetOn() {
-
-        // get Connectivity Manager object to check connection
-        ConnectivityManager connec =
-                (ConnectivityManager) getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
-
-        // Check for network connections
-        if (connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTED ||
-                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTING ||
-                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTING ||
-                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED) {
-
-
-            return true;
-
-        } else if (
-                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.DISCONNECTED ||
-                        connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.DISCONNECTED) {
-
-
-            return false;
-        }
-        return false;
+    public static boolean isDataConnectionAvailable(Context context) {
+        ConnectivityManager connectivityManager =
+                (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 
 

@@ -2,6 +2,14 @@ apply plugin: 'com.android.application'
 
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'Sylvester Ranjith'
+            keyPassword 'Sylvester1'
+            storeFile file("$rootDir/keystore.jks")
+            storePassword 'Sylvester1'
+        }
+    }
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
     defaultConfig {
@@ -12,15 +20,13 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
-
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES.txt'
         exclude 'META-INF/LICENSE.txt'
@@ -47,7 +53,7 @@ configurations.all {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -70,12 +76,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.1.0'
     compile 'com.google.android.gms:play-services-maps:11.0.4'
-    compile'com.google.firebase:firebase-database:11.0.4'
-    compile 'com.firebaseui:firebase-ui:2.2.0'
-    compile 'com.google.firebase:firebase-storage:11.0.4'
-    compile "com.android.support:support-core-utils:26.+"
+    compile 'com.google.firebase:firebase-database:11.0.4'
+    compile 'com.android.support:support-core-utils:26.+'
     compile 'com.google.firebase:firebase-messaging:11.0.4'
-    compile 'com.google.firebase:firebase-config:11.0.4'
-    compile 'com.firebase:firebase-client-android:2.4.0'
 }
 apply plugin: 'com.google.gms.google-services'
